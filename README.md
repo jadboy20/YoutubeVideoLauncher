@@ -28,7 +28,7 @@ This is a video launcher for youtube. It will allow you to put your top 10 favou
 
 5. Write heading (Remember space between heading and bottom)
 
-6. <ctrl + o> <ctrl + x>
+6. <ctrl + o> <Enter key> <ctrl + x>
 
 7. git push
 
