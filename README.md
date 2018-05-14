@@ -35,11 +35,11 @@ This is a video launcher for youtube. It will allow you to put your top 10 favou
 
 #Marko's Details
 ------------------
-**First Name**:
+**First Name**:Marko 
 
-**Last Name**:
+**Last Name**:Slankamenac
 
-**Email Adress**:(Parents)
+**Email Adress**:(Parents) tlslankamenac@gmail.com
 
 **About Me**: I am 10 years old and am one of james' students.
 
