@@ -32,3 +32,26 @@ This is a video launcher for youtube. It will allow you to put your top 10 favou
 
 7. git push
 
+
+#Marko's Details
+------------------
+**First Name**:
+
+**Last Name**:
+
+**Email Adress**:(Parents)
+
+**About Me**: I am 10 years old and am one of james' students.
+
+
+
+
+
+
+
+
+
+
+
+
+
