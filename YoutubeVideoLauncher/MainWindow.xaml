@@ -1,0 +1,21 @@
+﻿<Window x:Class="YoutubeVideoLauncher.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YoutubeVideoLauncher"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <Grid Height="60">
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="115*"/>
+                <ColumnDefinition Width="402*"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" Source="Images/Youtube.png"/>
+            <TextBlock Text="Video Launcher" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" FontFamily="Bauhaus 93" Foreground="#EE22FF" Height="44" Margin="25,8,10,8" Width="367"/>
+
+
+        </Grid>
+    </StackPanel>
+</Window>
