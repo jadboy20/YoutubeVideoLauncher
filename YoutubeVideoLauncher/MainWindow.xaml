@@ -17,5 +17,9 @@
 
 
         </Grid>
+
+        <ListBox x:Name="videoList" Height="257" MouseDoubleClick="videoList_MouseDoubleClick">
+            
+        </ListBox>
     </StackPanel>
 </Window>
