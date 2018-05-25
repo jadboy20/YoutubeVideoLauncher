@@ -1,6 +1,40 @@
 # YoutubeVideoLauncher
 This is a video launcher for youtube. It will allow you to put your top 10 favourite youtube videos on it so you can click on them and watch any time!
 
+
+# 25/05/2018 Homework
+------------------------
+
+I know its a bit late, but I want you to do these things:
+
+* Find 10 youtube videos or any other links on the internet. Must be in the form of 
+https://www.youtube.com/watch?v=yDiXQl7grPQ&t=95s . 
+
+* Under this line, make a list of them. I'll start the first one. 
+
+## My Video List
+
+* https://www.youtube.com/watch?v=yDiXQl7grPQ&t=95s 
+
+* *Enter your next one here....*
+
+* Make Sure that each dot point starts with a \*
+
+* Make sure that there is a blank space between each item in the list. 
+
+* Fifth link
+
+* Sixth link
+
+* Seventh Link
+
+* Eighth Link
+
+* Ninth Link
+
+* Tenth Link
+
+
 # 14/05/2018 Homework
 -----------------------
 
