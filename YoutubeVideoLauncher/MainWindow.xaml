@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:YoutubeVideoLauncher"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <StackPanel>
+        Title="MainWindow" Height="459" Width="525">
+    <StackPanel Margin="0,0,0,7">
         <Grid Height="60">
             <Grid.ColumnDefinitions >
                 <ColumnDefinition Width="115*"/>
@@ -17,8 +17,10 @@
 
 
         </Grid>
-       
-        <ListBox x:Name="videoList" Height="257" MouseDoubleClick="videoList_MouseDoubleClick">
+        <!-- We will put a text box and button for the search. -->
+        <TextBox Text="Put your search in here..." Margin="100,10,100,0"/>
+        <Button Content="Search" Margin="100,4,100,4" x:Name="SearchButton" Click="SearchButton_Click"/>
+        <ListBox x:Name="videoList"  MouseDoubleClick="videoList_MouseDoubleClick">
             
         </ListBox>
     </StackPanel>

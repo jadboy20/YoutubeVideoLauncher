@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using YoutubeSearch;
 
 namespace YoutubeVideoLauncher
 {
@@ -51,6 +52,21 @@ namespace YoutubeVideoLauncher
         {
             ListBox lb = sender as ListBox;
             MessageBox.Show("You clicked " + lb.SelectedItem);
+        }
+
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            // First we make the search. 
+            var items = new VideoSearch();
+
+            List<VideoInformation> list = items.SearchQuery("Minecraft", 1);
+
+            videoList.Items.Clear();
+
+            foreach(VideoInformation video in list)
+            {
+                videoList.Items.Add(video.Url);
+            }
         }
     }
 }
