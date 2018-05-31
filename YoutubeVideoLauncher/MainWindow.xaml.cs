@@ -68,5 +68,17 @@ namespace YoutubeVideoLauncher
                 videoList.Items.Add(video.Url);
             }
         }
+
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            // When size is changed, change the height of the List
+            Window window = sender as Window;
+            double heightDiff = e.NewSize.Height - e.PreviousSize.Height;
+            
+            // videoList.Height += heightDiff;
+
+            windowHeight.Content = "Window Height: " + e.NewSize.Height.ToString();
+            listHeight.Content = "List Height: " + videoList.Height.ToString();
+        }
     }
 }
