@@ -6,6 +6,14 @@
         xmlns:local="clr-namespace:YoutubeVideoLauncher"
         mc:Ignorable="d"
         Title="MainWindow" Height="459" Width="525" SizeChanged="Window_SizeChanged">
+    <Window.Resources>
+        <DataTemplate x:Key="videoListTemplate">
+            <StackPanel>
+                <TextBox Text="{Binding Path=Title}"/>
+                <TextBox Text="{Binding Path=Description}"/>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
     <StackPanel Margin="0,0,0,3">
         <Grid Height="60">
             <Grid.ColumnDefinitions >
@@ -20,10 +28,32 @@
         <Label Content="..." x:Name="windowHeight"/>
         <Label Content="..." x:Name="listHeight"/>
         <!-- We will put a text box and button for the search. -->
-        <TextBox Text="Put your search in here..." Margin="100,10,100,0"/>
+        <TextBox Text="Put your search in here..." Margin="100,10,100,0" x:Name="searchTextBox" GotFocus="searchTextBox_GotFocus" LostFocus="searchTextBox_LostFocus"/>
         <Button Content="Search" Margin="100,4,100,4" x:Name="SearchButton" Click="SearchButton_Click"/>
         <ListBox x:Name="videoList" Height="236"  MouseDoubleClick="videoList_MouseDoubleClick" ScrollViewer.CanContentScroll="True">
-
+           <!--
+            <ListBox.Resources>
+                <BitmapImage x:Key="Icon" UriSource="{Binding Thumbnail}"/>
+            </ListBox.Resources>
+            -->
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Image Source="{Binding Thumbnail}" Height="120"/>
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Text="{Binding Title}" FontSize="20"/>
+                            <TextBlock Text="{Binding Author}" FontSize="13"/>
+                            <TextBlock Text="{Binding Duration}" Margin="2,30,0,0"/>
+                        </StackPanel>
+                        
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
     </StackPanel>
 </Window>

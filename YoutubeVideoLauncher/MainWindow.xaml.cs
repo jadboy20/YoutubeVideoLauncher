@@ -23,11 +23,14 @@ namespace YoutubeVideoLauncher
     {
         // Any variable placed in here can be accessed anywhere on this page:
         string[] VideoArray = new string[10];
+        private List<Classes.Video> vidList;
+        bool start = false;
+        string placeHolder = "Please enter search...";
 
         public MainWindow()
         {
             InitializeComponent();
-
+            /*
             // For initializing, we put it in here:
             VideoArray[0] = "First Element";
             VideoArray[1] = "Second Element";
@@ -44,14 +47,15 @@ namespace YoutubeVideoLauncher
             {
                 videoList.Items.Add(VideoArray[i]);
             }
-
-
+            */
+            searchTextBox.Text = placeHolder;
         }
 
         private void videoList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             ListBox lb = sender as ListBox;
-            MessageBox.Show("You clicked " + lb.SelectedItem);
+            Classes.Video vid = lb.SelectedItem as Classes.Video;
+            System.Diagnostics.Process.Start(vid.Url);
         }
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)
@@ -59,14 +63,36 @@ namespace YoutubeVideoLauncher
             // First we make the search. 
             var items = new VideoSearch();
 
-            List<VideoInformation> list = items.SearchQuery("Minecraft", 1);
-
-            videoList.Items.Clear();
-
-            foreach(VideoInformation video in list)
+            // Get the search item.
+            if(searchTextBox.Text.Trim().Equals("") || searchTextBox.Text.Equals(placeHolder))
             {
-                videoList.Items.Add(video.Url);
+                MessageBox.Show("Make sure you have entered something in the Search Field");
             }
+            else
+            {
+                string searchQuery = searchTextBox.Text;
+                List<VideoInformation> list = items.SearchQuery(searchQuery, 1);
+
+                vidList = new List<Classes.Video>();
+
+                foreach (VideoInformation vi in list)
+                {
+                    Classes.Video vid = new Classes.Video()
+                    {
+                        Description = vi.Description,
+                        Title = vi.Title,
+                        Url = vi.Url,
+                        Duration = vi.Duration,
+                        Author = vi.Author,
+                        Thumbnail = vi.Thumbnail
+                    };
+                    vidList.Add(vid);
+                }
+                videoList.ItemsSource = vidList;
+            }
+         
+           
+
         }
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -74,11 +100,38 @@ namespace YoutubeVideoLauncher
             // When size is changed, change the height of the List
             Window window = sender as Window;
             double heightDiff = e.NewSize.Height - e.PreviousSize.Height;
-            
-            // videoList.Height += heightDiff;
+
+            if (start == true)
+            {
+                videoList.Height += heightDiff;
+            }
+            start = true;
 
             windowHeight.Content = "Window Height: " + e.NewSize.Height.ToString();
             listHeight.Content = "List Height: " + videoList.Height.ToString();
+        }
+
+        private void searchTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            // When got focus check if it equals placeholder. If so, then remove it.
+            TextBox tb = sender as TextBox;
+
+            if(tb.Text.Equals(placeHolder))
+            {
+                // We remove the text.
+                tb.Text = "";
+            }
+
+        }
+
+        private void searchTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = sender as TextBox;
+
+            if(tb.Text.Trim().Equals(""))
+            {
+                tb.Text = placeHolder;
+            }
         }
     }
 }
