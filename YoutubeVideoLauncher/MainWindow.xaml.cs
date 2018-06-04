@@ -98,6 +98,14 @@ namespace YoutubeVideoLauncher
                     vidList.Add(vid);
                 }
                 videoList.ItemsSource = vidList;
+
+                // Heres your homework Marko 4/06/2018
+                int numResults = videoList.Items.Count;             // How many results returned as integer. 
+                string numResultsString = numResults.ToString();       // How many results returned as string. 
+                string example = "Hello";
+                // Put Message Box Below:
+                // Make message show "Return <num results> results!"
+                MessageBox.Show("Example" + " 2" + example);
             }
         }
 

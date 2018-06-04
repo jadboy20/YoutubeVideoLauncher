@@ -1,6 +1,14 @@
 # YoutubeVideoLauncher
 This is a video launcher for youtube. It will allow you to put your top 10 favourite youtube videos on it so you can click on them and watch any time!
 
+# 4/06/2018
+--------------
+
+* Change logo to "Youtube V2.0"
+
+* Change the Colour of "Youtube V2.0"
+
+* Add in message box in code. 
 
 # 25/05/2018 Homework
 ------------------------
