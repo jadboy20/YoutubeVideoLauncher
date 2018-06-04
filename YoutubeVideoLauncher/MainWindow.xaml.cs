@@ -61,9 +61,6 @@ namespace YoutubeVideoLauncher
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
             SearchFunction();
-         
-           
-
         }
 
         private void SearchFunction()
@@ -83,6 +80,9 @@ namespace YoutubeVideoLauncher
 
                 vidList = new List<Classes.Video>();
 
+                VideoInformation video = new VideoInformation();
+
+             
                 foreach (VideoInformation vi in list)
                 {
                     Classes.Video vid = new Classes.Video()
@@ -109,7 +109,7 @@ namespace YoutubeVideoLauncher
 
             if (start == true)
             {
-                videoList.Height += heightDiff;
+               videoList.Height += heightDiff;
             }
             start = true;
 

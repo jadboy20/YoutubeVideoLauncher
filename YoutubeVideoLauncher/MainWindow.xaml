@@ -14,6 +14,7 @@
             </StackPanel>
         </DataTemplate>
     </Window.Resources>
+
     <StackPanel Margin="0,0,0,3">
         <Grid Height="60">
             <Grid.ColumnDefinitions >
