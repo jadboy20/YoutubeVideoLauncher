@@ -28,7 +28,7 @@
         <Label Content="..." x:Name="windowHeight"/>
         <Label Content="..." x:Name="listHeight"/>
         <!-- We will put a text box and button for the search. -->
-        <TextBox Text="Put your search in here..." Margin="100,10,100,0" x:Name="searchTextBox" GotFocus="searchTextBox_GotFocus" LostFocus="searchTextBox_LostFocus"/>
+        <TextBox Text="Put your search in here..." Margin="100,10,100,0" x:Name="searchTextBox" GotFocus="searchTextBox_GotFocus" LostFocus="searchTextBox_LostFocus" KeyDown="searchTextBox_KeyDown"/>
         <Button Content="Search" Margin="100,4,100,4" x:Name="SearchButton" Click="SearchButton_Click"/>
         <ListBox x:Name="videoList" Height="236"  MouseDoubleClick="videoList_MouseDoubleClick" ScrollViewer.CanContentScroll="True">
            <!--

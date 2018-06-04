@@ -60,11 +60,19 @@ namespace YoutubeVideoLauncher
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
+            SearchFunction();
+         
+           
+
+        }
+
+        private void SearchFunction()
+        {
             // First we make the search. 
             var items = new VideoSearch();
 
             // Get the search item.
-            if(searchTextBox.Text.Trim().Equals("") || searchTextBox.Text.Equals(placeHolder))
+            if (searchTextBox.Text.Trim().Equals("") || searchTextBox.Text.Equals(placeHolder))
             {
                 MessageBox.Show("Make sure you have entered something in the Search Field");
             }
@@ -85,14 +93,12 @@ namespace YoutubeVideoLauncher
                         Duration = vi.Duration,
                         Author = vi.Author,
                         Thumbnail = vi.Thumbnail
+
                     };
                     vidList.Add(vid);
                 }
                 videoList.ItemsSource = vidList;
             }
-         
-           
-
         }
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -131,6 +137,14 @@ namespace YoutubeVideoLauncher
             if(tb.Text.Trim().Equals(""))
             {
                 tb.Text = placeHolder;
+            }
+        }
+
+        private void searchTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter)
+            {
+                SearchFunction();
             }
         }
     }
